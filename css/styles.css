@@ -1,0 +1,141 @@
+/* fof2f8
+a4b3e8
+a3a5a8
+0a0e27
+7488da
+2b43e1
+41455b
+d31204 */
+
+*{
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+}
+header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background:#0a0e27;
+}
+header .headings
+{
+    justify-content:space-evenly;
+    align-items: center;
+    background:#0a0e27;
+    display: inline-flex;
+}
+.container {
+    position: absolute;
+    width: 60px;
+    right: 10px;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: rgb(237, 246, 253);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+  nav
+  {
+      transition: all 0.3s ease-in;
+  }
+.nav-bar
+{
+    list-style: none;
+    transition: all 0.3s ease-in;
+    
+}
+.nav-bar li
+{
+    display: inline-block;
+    padding: 0px 20px;
+   
+    
+    
+}
+.nav-bar li a{
+    text-decoration: none;
+    justify-content: space-between;
+    color: rgb(237, 246, 253);
+    transition: all 0.3s ease-in;
+
+}
+.nav-bar li a:hover{
+   
+    color: rgb(76, 165, 233);
+    letter-spacing: 0.6px;
+   
+    
+}
+dl, ol, ul,h4 {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+.org
+{
+    color: rgb(236, 243, 250);
+
+}
+.hamburger
+{
+    display:block;
+    background-image: url(../public/images/hamburger.jpg);
+    height: 2em;
+    width: 2em;
+}
+@media  screen and (max-width:650px)
+{
+    header
+    {
+       
+        display: block;
+    }
+    .headings h4{
+        padding: 0 0 0em 0;
+
+        justify-items: center;
+        text-align: center;
+    }
+    .container
+    {
+        display: inline-block;
+    }
+    .nav-bar
+    {
+        align-content: center;
+        text-align: center;
+        padding: 0;
+        display: none;
+        
+    }
+    .nav-bar li {
+        align-content: center;
+        display: block;
+        padding: 0.3em 0 0.3em 0;
+        transition: all 0.3s ease-in;
+    }
+    .nav-bar li:hover
+    {
+        border: 1px solid white;
+    }
+
+}
