@@ -7,11 +7,29 @@ a3a5a8
 41455b
 d31204 */
 
+:root {
+    --white: #f0f2f8;
+    --light-gray-blue: #a4b3e8;
+    --medium-gray: #a3a5a8;
+    --dark-gray: #41455b;
+    --black: #0a0e27;
+    --light-blue: #7488da;
+    --dark-blue: #2b43e1;
+    --red: #d31204;
+
+    --xlarge-font : 4rem;
+    --large-font : 2rem;
+    --medium-font : 1.25rem;
+    --small-font : 0.9rem;
+  }
+
+
 *{
     box-sizing: border-box;
     border: 0;
     margin: 0;
 }
+
 header
 {
     display: flex;
@@ -67,12 +85,13 @@ header .headings
 .nav-bar li
 {
     display: inline-block;
-    padding: 0px 20px;
+    padding: 0px 15px;
    
     
     
 }
 .nav-bar li a{
+    font-size: 1rem;
     text-decoration: none;
     justify-content: space-between;
     color: rgb(237, 246, 253);
@@ -82,8 +101,6 @@ header .headings
 .nav-bar li a:hover{
    
     color: rgb(76, 165, 233);
-    letter-spacing: 0.6px;
-   
     
 }
 dl, ol, ul,h4 {
@@ -93,7 +110,7 @@ dl, ol, ul,h4 {
 .org
 {
     color: rgb(236, 243, 250);
-
+    font-size: 1.75rem;
 }
 .hamburger
 {
@@ -138,4 +155,51 @@ dl, ol, ul,h4 {
         border: 1px solid white;
     }
 
+}
+/*-----------------------------End of Navbar Div-----------------------------------------*/
+/* ----------------------------- Home division ------------------------------------------*/
+
+.home{
+    height: 100vh;
+    display: grid;
+    background-image: url(/images/finance.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.intro{
+    padding-left: 10vw;
+    
+}
+
+.intro h1{
+    font-size: var(--xlarge-font);
+    margin-top: 25vh;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 5rem;
+    animation: headingMove ease-out 2s alternate;
+}
+@keyframes headingMove {
+    from{margin-top:20vh;}
+    to {margin-top: 25vh;}
+}
+.intro p{
+    margin-top: 7vh;
+    font-size: var(--medium-font);
+    line-height: 2rem;
+}
+
+
+
+
+@media  screen and (max-width:1100px)
+{
+    .home{
+        background-image: none;
+        background-color: var(--light-gray-blue);
+    }
+    .intro p{
+        font-size: var(--small-font);
+    }
 }
