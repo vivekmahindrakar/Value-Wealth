@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dashboardStyle.css">
+   
+    
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+    <title>Value Wealth</title>
+</head>
+<body>
+    <header>
+        
+        <div class="top-header">
+            <h3 class="org"> Value Wealth Creators</h4>
+        </div>
+        <div class="search">
+            <!-- <form action="/dashboard" method="post">
+                <input type="text" name="search_name" placeholder="Search by name">
+                <button type="submit" > <img src="/images/search.svg" alt="search"> </button>
+            </form> -->
+
+            
+        </div>
+    </header>
+    <br>
+    <h2>Registered Users</h2>
+    <br>
+    <% if (customers!=null) { %>
+        <table>
+        
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+            
+            <tr>
+                <td> <%=customers.name%> </td>
+                <td> <%=customers.email%> </td>
+                <td> <%=customers.phone%> </td>
+            </tr>
+            
+        </table>
+    <% } else { %>
+        <h3 class="noUser">No users found</h3>
+        <% } %> 
+    
+        <div class="success">
+            <form action="/home-dashboard" method="post">
+                <button type="submit" class="btn btn-success">Return to dashboard</button>
+            </form>
+        </div>
+        
+    
+</body>
+</html>
