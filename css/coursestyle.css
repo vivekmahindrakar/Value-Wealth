@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+}
+.course-header{
+    height: 45vh;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: grid;
+    place-content: center;
+    background-color: #131a49;
+    color: #fff;
+}
+.course-header h1{
+    line-height: 2rem;
+    padding-bottom: 5%;
+}
+.course-header button{
+    width: 40%;
+}
+
+.contentheader{
+    padding: 5vh;
+    margin-left: 10%;
+    font-weight: bold;
+    color: #555;
+}
+.contentpart-1,.contentpart-2{
+    padding: 3vh;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 2rem;
+    text-align: left;
+}
+.contentpart-2 ul {
+    list-style: none;
+    text-transform: capitalize;
+}
+.contentpart-2 ul li:before {
+    content: '✓ ';
+}
+.contentpart-1 ul {
+    list-style: none;
+    text-transform: capitalize;
+}
+.contentpart-1 ul li:before {
+    content: '✓ ';
+}
+
+.outcomes{
+    padding-top: 7vh;
+    
+}
+.outcomes ul{
+    list-style: none;
+}
+.tile{
+    margin-bottom: 3vh;
+    display: flex;
+}
+.tile img{
+    height: 50px;
+    width: 62px;
+}
+.tile-text{
+    line-height: .9em;
+    padding-left: 10%;
+}
+.tile-text h3{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.tile-text p{
+    font-size: 0.875rem;
+    color: #777;
+}

@@ -195,3 +195,9 @@ app.get("/dashboard", function(req, res){
 });
 
 
+//--------------------------------Handling Courser ------------------------------------//
+
+app.get("/course",(req,res)=>{
+    res.sendFile(__dirname + "/course.html");
+});
+
