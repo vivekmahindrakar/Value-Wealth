@@ -19,7 +19,7 @@ body{
     line-height: 2rem;
     padding-bottom: 5%;
 }
-.course-header button{
+.course-header .btn{
     width: 40%;
 }
 

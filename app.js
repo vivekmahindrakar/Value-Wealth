@@ -161,6 +161,7 @@ app.get("/login", (req, res) => {
 
 app.post("/login", function (req, res) {
     
+    
     const userLogin = new User({
         username: req.body.username,
         password: req.body.password
@@ -170,8 +171,7 @@ app.post("/login", function (req, res) {
         if (err) {
           console.log(err);
         } else {
-          passport.authenticate("local")(req, res, function(){
-            res.redirect("/dashboard");
+          passport.authenticate("local",{ successRedirect:'/dashboard',failureRedirect: '/login' } )(req, res, function(){
           });
         }
       });
@@ -201,3 +201,9 @@ app.get("/course",(req,res)=>{
     res.sendFile(__dirname + "/course.html");
 });
 
+app.use(function (req, res, next) {
+    res.status(404).render('invalidRes',{
+        errorCode : 404, 
+        errorHeading : "OOPS!",
+        errorSubtext : "The page you are looking for is missing."})
+}); 
