@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/dashboardStyle.css">
-    
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
+    
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="/js/main.js"></script>
     <title>Value Wealth</title>
@@ -21,20 +21,12 @@
         
         <div class="top-header">
             <h3 class="org"> Value Wealth Creators</h4>
-                <div class="container hamburger-btn" onclick="hamburger(this)">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                  </div>
         </div>
         <div class="search">
-            <form action="/dashboard" method="post">
+            <!-- <form action="/dashboard" method="post">
+                <input type="text" name="search_name" placeholder="Search by name">
                 <button type="submit" > <img src="/images/search.svg" alt="search"> </button>
-                <input type="text" name="search_name" placeholder="Search...">
-                
-            </input>
-                
-            </form>
+            </form> -->
 
             
         </div>
@@ -42,19 +34,32 @@
     <br>
     <h2>Registered Users</h2>
     <br>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-        </tr>
-        <% customers.forEach(user=> { %>
-        <tr>
-            <td> <%=user.name%> </td>
-            <td> <%=user.email%> </td>
-            <td> <%=user.phone%> </td>
-        </tr>
-        <% }); %>
-    </table>
+    <% if (customers!=null) { %>
+        <table>
+        
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+            
+            <tr>
+                <td> <%=customers.name%> </td>
+                <td> <%=customers.email%> </td>
+                <td> <%=customers.phone%> </td>
+            </tr>
+            
+        </table>
+    <% } else { %>
+        <h3 class="noUser">No users found</h3>
+        <% } %> 
+    
+        <div class="success">
+            <form action="/home-dashboard" method="post">
+                <button type="submit" class="btn btn-success">Return to dashboard</button>
+            </form>
+        </div>
+        
+    
 </body>
 </html>

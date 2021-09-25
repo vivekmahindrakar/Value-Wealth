@@ -1,9 +1,24 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+      
+}
+:root{
+    --primary-dark-bg:#0A043C;
+    --accent-btn-purple:#311DDD;
+    --accent-btn-hover:#3722f6;
+    --primary-little-dark:#150975;
 }
 body{
+    margin: 0;
+    padding:0;
     overflow-x: hidden;
+}
+
+.content{
+    background-color: #f8f8f8;
 }
 .course-header{
     height: 45vh;
@@ -12,22 +27,32 @@ body{
     padding-right: 10%;
     display: grid;
     place-content: center;
-    background-color: #131a49;
+    background-image: url("/images/stockbg.svg");
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #fff;
 }
 .course-header h1{
     line-height: 2rem;
     padding-bottom: 5%;
 }
-.course-header .btn{
+.course-header button{
     width: 40%;
+    font-size: 1.25rem;
+    background-color: var(--accent-btn-purple);
+    border:1px solid var(--accent-btn-purple);
+}
+.course-header button:hover{
+    background-color: var(--accent-btn-hover);
+    border:1px solid var(--accent-btn-hover);
 }
 
 .contentheader{
     padding: 5vh;
     margin-left: 10%;
     font-weight: bold;
-    color: #555;
+    color: var(--primary-dark-bg);
 }
 .contentpart-1,.contentpart-2{
     padding: 3vh;
@@ -53,13 +78,13 @@ body{
 
 .outcomes{
     padding-top: 7vh;
-    
 }
 .outcomes ul{
     list-style: none;
 }
 .tile{
     margin-bottom: 3vh;
+    margin-right: 7.5vh;
     display: flex;
 }
 .tile img{
@@ -77,4 +102,35 @@ body{
 .tile-text p{
     font-size: 0.875rem;
     color: #777;
+}
+.mobile{
+    display: none;
+}
+
+footer{
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom:10px;
+    color: #ccc;
+}
+
+@media  screen and (max-width:650px)
+{
+
+    .course-header button{
+        display: none;
+    }
+    .mobile{
+        display: grid;
+        place-content: center;
+        margin-top: 20px;
+        margin-bottom:40px;
+    }
+    .mobile a{
+        width: 200px;
+        background-color: var(--accent-btn-purple);
+        border: 1px solid var(--accent-btn-hover);
+    }
+
+
 }
