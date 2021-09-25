@@ -1,0 +1,164 @@
+:root {
+    --white: #f0f2f8;
+    --light-gray-blue: #a4b3e8;
+    --vlight-gray-blue: #bac4e7;
+    --medium-gray: #a3a5a8;
+    --dark-gray: #41455b;
+    --black: #0a0e27;
+    --light-blue: #7488da;
+    --dark-blue: #2b43e1;
+    --medium-blue: #5266e6;
+    --red: #d31204;
+
+    --xlarge-font : 4rem;
+    --large-font : 2rem;
+    --medium-font : 1.25rem;
+    --small-font : 0.9rem;
+  }
+
+*{
+    padding:0;
+    margin: 0%;
+    font-family: 'Roboto', sans-serif;
+     
+}
+h2{
+    margin: auto auto;
+    text-align: center;
+}
+header .search form input
+{
+    background-color:#14193a;
+    color: #fff;
+    outline: none;
+    height: 26px;
+    width: 90%;
+    padding-left: 7px;
+    /* border-bottom:1px solid rgb(233, 230, 230) ; */
+}
+.search
+{
+    width:18em;
+}
+.search form button
+{
+    background-color:#14193a;
+    height: 100%;
+    position:relative;
+    bottom: 1.5px;
+    left: 5px;
+    width: fit-content;
+}
+table
+{
+    position: relative;
+    top: 4em;
+    padding: 1.3rem;
+    width: 90%;
+    margin: auto auto;
+    
+}
+table tr th{
+    text-align: center;
+}
+table tr{
+    padding: 1.5rem;
+    border-bottom:1px solid silver ;
+}
+table tr td, table tr th
+{
+    font-size: 1rem;
+    padding: 0.4rem 0.2rem;
+    
+}
+.noUser
+{
+    position: relative;
+    top: 2em;
+    color: silver;
+    margin: auto auto;
+    text-align: center;
+}
+.success
+{
+    position: relative;
+    
+    top: 3em;
+    display: flex;
+    height: 5em;
+    margin: 2em;
+    justify-content: space-around;
+}
+.success button
+{
+    background-color: var(--medium-blue);
+    border: 1px solid #fff;
+}
+.success button:hover
+{
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #0a0e27;
+}
+
+.hamburger-btn{
+    display: none;
+}
+
+
+@media screen and (max-width:800px) {
+
+    .headings h3{
+        font-size:medium;
+        margin: auto auto;
+    }
+    .header
+    {
+       text-align: center;
+    }
+
+    .top-header
+    {
+        display:flex;
+        margin: 0px;
+        width: fit-content;
+    }
+    .top-header h3
+    {
+        font-size: 1.65rem;
+    }
+    .hamburger-btn
+    {
+        position: relative;
+        display: block;
+        width: fit-content;
+        left: 10%;
+        
+    }
+    .bar1, .bar2, .bar3 {
+        width: 25px;
+        height: 3px;
+        border-radius: 10%;
+        background-color: rgb(237, 246, 253);
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+    .search {
+
+        margin: auto auto;
+        display: none;
+        
+
+    }
+    table
+    {
+    width: 90%;
+
+    }
+    table tr td
+{
+    font-size: 0.63rem;
+    padding: 0.4rem 0.2rem;
+    /* border-right:1px solid silver ; */
+}
+}

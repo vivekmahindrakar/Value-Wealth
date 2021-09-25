@@ -6,6 +6,14 @@ function myFunction(x) {
     document.getElementsByClassName("nav-bar")[0].style.display="block";
     
   }
+  function hamburger(x) {
+    x.classList.toggle("change");
+    if(document.getElementsByClassName("search")[0].style.display=="block")
+    document.getElementsByClassName("search")[0].style.display="none";
+    else
+    document.getElementsByClassName("search")[0].style.display="block";
+    
+  }
   function toggleDescription(num)
   {
   

@@ -2,16 +2,19 @@ const express = require('express');
 const mongoose = require("mongoose");
 const session = require('express-session');
 const passport = require("passport");
+const cookieParser = require("cookie-parser");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const app = express();
+let randomStringUri = '/'+Math.random().toString(36).substring(2,7);
 
 app.set('view engine', 'ejs');
 
+
 app.use(session({
     secret: "Our little secret.",
-    resave: false,
-    saveUninitialized: false
+    resave: true,
+    saveUninitialized: true
 }));
 
 app.use(passport.initialize());
@@ -27,6 +30,8 @@ app.use("/css", express.static("css"));
 app.use("/js", express.static("js"));
 app.use("/views",express.static("views"));
 app.use("/images", express.static("images"));
+
+
 
 
 
@@ -52,14 +57,14 @@ function myFunction(x) {
     x.classList.toggle("change");
 }
 
-//---------------------------------Handling admin register ---------------------------//
+//---------------------------------Handling admin register ---------------------------
 
 
-// const adminIdSchema = new mongoose.Schema({
-//     admin_id: String
-// });
+const adminIdSchema = new mongoose.Schema({
+    admin_id: String
+});
 
-// const AdminID = new mongoose.model("AdminID", adminIdSchema);
+ const AdminID = new mongoose.model("AdminID", adminIdSchema);
 
 // AdminID.insertMany([
 //     {admin_id : "a123"},
@@ -97,6 +102,45 @@ const registeredUserSchema = mongoose.Schema(
 
 const RegisteredUser = new mongoose.model("RegisteredUser",registeredUserSchema);
 
+//-------------------------handling registered user---------------------------------
+app.post("/form",function(req,res)
+{
+    var m_name =req.body.name;
+    var m_phone = req.body.phone;
+    var m_email = req.body.email;
+
+
+    const member = new RegisteredUser(
+        {
+            name:m_name,
+            phone:m_phone,
+            email:m_email,
+            date: new Date().toISOString().slice(0,10)
+
+        }
+    )
+    member.save(function(err,result)
+    {
+        if(err)
+        console.log(err);
+        else
+        {
+            res.render("invalidRes",{image:"thankyou.svg",
+            errorCode :null, 
+            errorHeading : "Thank you!",
+            errorSubtext : "We appreciate your eagerness towards learning :D",
+            usefulTip:"We will reach out to you ASAP"});
+            console.log(result);   
+        }
+       
+    })    
+    
+
+
+})
+
+//-----------------------------------------------------------------------------------
+
 
 const userSchema = new mongoose.Schema({
     username: String,
@@ -106,6 +150,7 @@ const userSchema = new mongoose.Schema({
 userSchema.plugin(passportLocalMongoose);
 
 const User = new mongoose.model("User", userSchema);
+
 
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
@@ -131,7 +176,7 @@ app.post("/register", function (req, res) {
                       res.redirect("/register");
                     } else {
                       passport.authenticate("local")(req, res, function(){
-                        res.redirect("/dashboard");
+                        res.redirect(randomStringUri);
                       });
                     }
                   });
@@ -156,11 +201,12 @@ app.post("/register", function (req, res) {
 
 //---------------------------------Handling admin login ---------------------------//
 app.get("/login", (req, res) => {
-    res.sendFile(__dirname + "/adminLogin.html");
+    res.render("adminLogin",{loginError:null});
 });
-
+app.get("/login-failed", (req, res) => {
+    res.render("adminLogin",{loginError:1});
+});
 app.post("/login", function (req, res) {
-    
     
     const userLogin = new User({
         username: req.body.username,
@@ -169,9 +215,13 @@ app.post("/login", function (req, res) {
     
       req.login(userLogin, function(err){
         if (err) {
-          console.log(err);
+          console.log(err);  
         } else {
-          passport.authenticate("local",{ successRedirect:'/dashboard',failureRedirect: '/login' } )(req, res, function(){
+          passport.authenticate("local",{successRedirect:randomStringUri,failureRedirect:'/login-failed'})(req, res, function(){
+              if(req.user)
+            res.redirect(randomStringUri);
+            else
+            console.log("user not found");
           });
         }
       });
@@ -179,31 +229,73 @@ app.post("/login", function (req, res) {
 });
 
 //---------------------------------Handling Dashboard-----------------------------//
-app.get("/dashboard", function(req, res){
+app.get(randomStringUri, function(req, res){
 
     if (req.isAuthenticated()){
       RegisteredUser.find({},function (err,foundItems) {
           if (err) {
               console.log(err);
           } else {
+            console.log(req.isAuthenticated());
               res.render('dashboard',{customers : foundItems});
+              
           }
       })
     } else {
       res.redirect("/login");
     }
 });
+app.post("/dashboard",function(req,res)
+{
+    
+        RegisteredUser.findOne({name:req.body.search_name},function (err,foundItems) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.render('individual-result',{customers : foundItems});
+                
+            }
+        });
+       
+    
+});
+app.post("/home-dashboard",function(req,res)
+{
+    
+        RegisteredUser.find({},function (err,foundItems) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.redirect(randomStringUri);
+            }
+        })
+      
 
-
+});
 //--------------------------------Handling Courser ------------------------------------//
 
 app.get("/course",(req,res)=>{
     res.sendFile(__dirname + "/course.html");
 });
 
+app.get("/apply-now",function (req,res) {
+    res.sendFile(__dirname + "/index.html");
+});
+
+app.post("/apply-now",function(req,res)
+{
+    res.sendFile(__dirname + "/index.html");
+});
+
+//-------------------------------handling 404 error page--------------------------------
+
 app.use(function (req, res, next) {
     res.status(404).render('invalidRes',{
+        image:"404.svg",
         errorCode : 404, 
         errorHeading : "OOPS!",
-        errorSubtext : "The page you are looking for is missing."})
-}); 
+        errorSubtext : "The page you are looking for is missing.",
+        usefulTip:"You might find what you are looking for here"})
+});
+    
+

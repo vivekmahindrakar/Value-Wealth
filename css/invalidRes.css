@@ -1,14 +1,15 @@
 *{
     margin: 0;
     padding: 0;
+    
 }
 #errorcodep{
     margin: 10px;
     margin-left: 5%;
 }
 img{
-    height: 50vh;
-    width: 95%;
+    height: 40vh;
+    width: auto;
 }
 .textdiv{
     padding-left: 5%;
@@ -41,14 +42,14 @@ a{
 }
 
 
-@media screen and (min-width:1000px)
+@media screen and (min-width:800px)
 {
     #errorcodep{
         display: none;
     }
     img{
-        height: 100vh;
-        width: 50vw;
+        height: 90vh;
+        width: 40vw;
     }
     body{
         display: flex;
