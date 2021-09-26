@@ -128,8 +128,8 @@ dl, ol, ul,h4 {
 }
 .org
 {
-    color: var(--ivory-white);
-    font-size: 1.75rem;
+    height: 50px;
+    width: 55px;
 }
 .hamburger
 {
@@ -138,6 +138,8 @@ dl, ol, ul,h4 {
     height: 2em;
     width: 2em;
 }
+
+
 @media  screen and (max-width:650px)
 {
     header
@@ -252,6 +254,8 @@ dl, ol, ul,h4 {
     background-color: var(--accent-btn-hover);
     border:1px solid var(--accent-btn-hover);
 }
+
+
 
 @media  screen and (max-width:1100px)
 {
