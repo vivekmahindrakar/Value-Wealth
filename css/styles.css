@@ -42,6 +42,9 @@ body
     scroll-behavior:smooth;
     font-family: 'Roboto', sans-serif;
 }
+h2{
+    font-family: "Oxygen", 'Roboto', Arial, Helvetica, sans-serif;
+}
 .root
 {
     display: block;
@@ -458,6 +461,20 @@ dl, ol, ul,h4 {
 }
 /*------------------------------End of Why uS ?---------------------------------------*/
 /*------------------------------Registration form---------------------------------------*/
+
+
+/*  Removes the ugly arrows on any number input field  */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 .pricings-and-form
 {
     position: relative;
@@ -547,7 +564,17 @@ input[type=number]::-webkit-outer-spin-button
 .my-btn
 {
     width: 100%;
+    background-color: var(--accent-btn-purple);
+    color: #fff;
+    border:1px solid var(--accent-btn-purple);
+    font-size: 1.5rem;
+    transition: 1s ease-in hover;
+} 
+.my-btn:hover{
+    background-color: var(--accent-btn-hover);
+    border:1px solid var(--accent-btn-hover);
 }
+
 
 .contacts
 {
@@ -597,6 +624,10 @@ input[type=number]::-webkit-outer-spin-button
     height: 11em;
     width: 90%;
     margin: auto auto;
+}
+.content li{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 @media  screen and (max-width:800px) {
@@ -650,5 +681,12 @@ input[type=number]::-webkit-outer-spin-button
         top:0;
         height: fit-content;
     }
+
+    .my-btn{
+        font-size: 1rem;
+        margin-bottom: 6vh;
+    }
+
+    
     
 }

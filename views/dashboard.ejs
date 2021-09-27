@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,7 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/dashboardStyle.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -16,45 +17,55 @@
     <script src="/js/main.js"></script>
     <title>Value Wealth</title>
 </head>
+
 <body>
     <header>
-        
+
         <div class="top-header">
-            <h3 class="org"> Value Wealth Creators</h4>
-                <div class="container hamburger-btn" onclick="hamburger(this)">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                  </div>
+            <img class="org" src="/images/logo.png">
+            <div class="container hamburger-btn" onclick="hamburger(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
         </div>
         <div class="search">
             <form action="/dashboard" method="post">
-                <button type="submit" > <img src="/images/search.svg" alt="search"> </button>
+                <button type="submit"> <img src="/images/search.svg" alt="search"> </button>
                 <input type="text" name="search_name" placeholder="Search...">
-                
-            </input>
-                
+
+                </input>
+
             </form>
 
-            
+
         </div>
     </header>
     <br>
-    <h2>Registered Users</h2>
-    <br>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-        </tr>
-        <% customers.forEach(user=> { %>
-        <tr>
-            <td> <%=user.name%> </td>
-            <td> <%=user.email%> </td>
-            <td> <%=user.phone%> </td>
-        </tr>
-        <% }); %>
-    </table>
+    <div class="dashboard-table">
+        <h2>Registered Users</h2>
+        <br>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+            <% customers.forEach(user=> { %>
+                <tr>
+                    <td>
+                        <%=user.name%>
+                    </td>
+                    <td>
+                        <%=user.email%>
+                    </td>
+                    <td>
+                        <%=user.phone%>
+                    </td>
+                </tr>
+                <% }); %>
+        </table>
+    </div>
 </body>
+
 </html>
