@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <title>Value Wealth</title>
+</head>
+
+<body >
+
+    <header id='nav-head'>
+
+        <div class="headings" id="org">
+            <img class="org" src="/images/logo-modified.svg" > <h4>Value Wealth Creator</h4> 
+                <div class="container" onclick="myFunction(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+        </div>
+
+
+        <nav>
+            <ul class="nav-bar">
+                <li><a href="#home">Home</a> </li>
+                <li><a href="#services-div">Our Services</a></li>
+                <li><a href="#why-us">Why us</a></li>
+                <li><a href="#registration-form">Register</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="root">
+
+        <div class="home" id="home">
+            <div class="intro">
+                <h1> <strong>Steer your portfolio <br> in right direction.</strong></h1>
+                <p> We focus on adding value to your wealth by <br> delivering efficient investing tools <br> which are
+                    helpful to maximize your wealth</p>
+                <a href="/course" class="btn btn-outline-primary">What's in it?</a>
+            </div>
+            <div class="home-illustration">
+
+                <object data="/images/webbg2.svg" type="image/svg+xml" class="svgClass"></object>
+                <!-- <img src="/images/webbg2.svg" alt="webbg"> -->
+            </div>
+
+        </div>
+
+        <div id="services-div" data-aos="fade-up">
+            <h1 id="service-head"><strong>Our Services</strong></h1><br>
+            <div class="services">
+
+                <div class="services1">
+                    <div id="investment">
+                        <img src="/images/graph.svg" alt="investment" class="icon">
+                        <h5>Learn about Investments</h5>
+                    </div>
+                    <div id="portfolio">
+                        <img src="/images/portfolio.svg" alt="portfolio" class="icon">
+                        <h5>Portfolio Management</h5>
+                    </div>
+                    <div id="stocks">
+                        <img src="/images/investment.svg" alt="stocks" class="icon">
+                        <h5>Stocks Sip, <br> Mutual Funds</h5>
+                    </div>
+                </div>
+                <div class="services2">
+                    <div id="research">
+                        <img src="/images/market-research.svg" alt="research" class="icon">
+                        <h5>Market <br> Research</h5>
+                    </div>
+                    <div id="classes">
+                        <img src="/images/classes.svg" alt="classes" class="icon">
+                        <h5>Share Market Classes</h5>
+                    </div>
+                    <div id="desk">
+                        <img src="/images/desk.svg" alt="desk" class="icon">
+                        <h5>Dedicated desk </h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="whyusdiv" id="why-us">
+            <h1><strong>Why Us</strong></h1>
+            <div class="hs"  data-aos="zoom-out">
+                <div class="card"><img src="/images/alldata.svg" alt="alldata">
+                    <p>All kinds of Trading and Advisory Services</p>
+                </div>
+                <div class="card"><img src="/images/teaching.svg" alt="teaching">
+                    <p>Share Market classes by expert instructors</p>
+                </div>
+                <div class="card"><img src="/images/consultancy.svg" alt="consultancy">
+                    <p>Research Team with 10+ experience</p>
+                </div>
+                <div class="card"><img src="/images/assistance.svg" alt="assistance">
+                    <p>Dedicated Trading and Research Desks</p>
+                </div>
+                <div class="card"><img src="/images/experts.svg" alt="support">
+                    <p>Partnership of Three Full time Brokers in India</p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="pricings-and-form" id="registration-form">
+
+            <!-- <div class="pricing">
+                
+                <div class="content">
+                    <h2><strong>What will you get?</strong></h2>
+                    <br>
+                    <ul>
+                        <li> <img src="images/done.svg"> 30 days classroom/ online Training</li>
+                        <li> <img src="images/done.svg"> 12 months full support</li>
+                        <li> <img src="images/done.svg"> Access to Trading softwares</li>
+                    </ul>
+                    <br>
+                    
+                   <br>
+                </div>
+                
+            </div> -->
+    
+            <div class="registration-div">
+            <img src="/images/applied.svg" alt="applied">
+                
+                <form action="/form" method="post" class="reg-form">
+                    <h2><strong>Apply now!!</strong></h2>
+                    
+                    <input type="text" name="name" class="name" autocomplete="off" required>
+                    <label for="name" class="label-name">
+                        <span class="content-name">Name</span>
+                    </label><br>
+        
+                    <input type="number" name="phone" class="phone" autocomplete="off" required>
+                    <label for="phone" class="label-phone"> 
+                       <span class="content-phone">Mobile no</span>
+                    </label><br>
+        
+                    <input type="text" name="email" class="email" autocomplete="off" required>
+                    <label for="email" class="label-email">
+                       <span class="content-email">Email</span>
+                    </label><br>
+        
+                    <button type="submit" name="submit" class="btn btn-outline-primary my-btn"> Grab your Seats @ 5000 /-</button>
+                </form>
+            </div>
+            
+            
+        </div>
+    
+        <div class="map">
+            <div class="address">
+                <h1>Find us at</h1><br>
+                <h6><address>
+                    SR no 5,Office no 2 <br>
+                    Shree Swami Samartha Building <br>
+                    Sant Nagar Bus stop, Undri,Pune:411060<br>
+                    <br>
+                    Landmark:Undri city center
+                </address></h6><br><br>
+                <div class="contacts">
+                    <div class="contact-item">
+                        <img src="images/mail-icon.svg" alt="mail icon">
+                        <p><a href="mailto:valuewealthcreators@gmail.com">valuewealthcreators@gmail.com</a> </p>
+                    </div>
+                    <div class="contact-item">
+                        <img src="images/phone-icon.svg" alt="phone icon">
+                        <p>9561230580</p>
+                    </div>
+                </div>
+            </div>
+            <div class="main-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d429.56632700576733!2d73.9131850404727!3d18.455780431967227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2ea3840392355%3A0x2ac9a888226f2733!2sKeystone%20Capella!5e0!3m2!1sen!2sin!4v1631878411416!5m2!1sen!2sin" 
+                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+            
+        </div>
+        
+        
+    </body>
+    <footer>
+        <p>&copy; value wealth creators</p>
+        
+    </footer>
+    <script>
+        AOS.init({
+            offset:300,
+            duration:1000
+        });
+      </script>
+
+</html>

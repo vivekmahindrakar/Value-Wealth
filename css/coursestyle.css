@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+      
+}
+:root{
+    --primary-dark-bg:#0A043C;
+    --accent-btn-purple:#311DDD;
+    --accent-btn-hover:#3722f6;
+    --primary-little-dark:#150975;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body{
+    margin: 0;
+    padding:0;
+    overflow-x: hidden;
+}
+
+.content{
+    background-color: #f8f8f8;
+}
+.course-header{
+    height: 45vh;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: grid;
+    place-content: center;
+    background-image: url("/images/stockbg.svg");
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.course-header h1{
+    line-height: 2rem;
+    padding-bottom: 5%;
+}
+.course-header button{
+    width: 40%;
+    font-size: 1.25rem;
+    background-color: var(--accent-btn-purple);
+    border:1px solid var(--accent-btn-purple);
+}
+.course-header button:hover{
+    background-color: var(--accent-btn-hover);
+    border:1px solid var(--accent-btn-hover);
+}
+
+.contentheader{
+    padding: 5vh;
+    margin-left: 10%;
+    font-weight: bold;
+    color: var(--primary-dark-bg);
+}
+.contentpart-1,.contentpart-2{
+    padding: 3vh;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 2rem;
+    text-align: left;
+}
+.contentpart-2 ul {
+    list-style: none;
+    text-transform: capitalize;
+}
+.contentpart-2 ul li:before {
+    content: '✓ ';
+}
+.contentpart-1 ul {
+    list-style: none;
+    text-transform: capitalize;
+}
+.contentpart-1 ul li:before {
+    content: '✓ ';
+}
+
+.outcomes{
+    padding-top: 7vh;
+}
+.outcomes ul{
+    list-style: none;
+}
+.tile{
+    margin-bottom: 3vh;
+    margin-right: 7.5vh;
+    display: flex;
+}
+.tile img{
+    height: 50px;
+    width: 62px;
+}
+.tile-text{
+    line-height: .9em;
+    padding-left: 10%;
+}
+.tile-text h3{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.tile-text h6{
+    font-size: 0.875rem;
+    color: #777;
+}
+.mobile{
+    display: none;
+}
+
+footer{
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom:10px;
+    color: #ccc;
+}
+
+@media  screen and (max-width:650px)
+{
+
+    .course-header button{
+        display: none;
+    }
+    .mobile{
+        display: grid;
+        place-content: center;
+        margin-top: 20px;
+        margin-bottom:40px;
+    }
+    .mobile a{
+        width: 200px;
+        background-color: var(--accent-btn-purple);
+        border: 1px solid var(--accent-btn-hover);
+    }
+
+
+}
