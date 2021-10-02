@@ -6,6 +6,10 @@ const cookieParser = require("cookie-parser");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const app = express();
+const dotenv = require("dotenv")
+
+dotenv.config();
+
 let randomStringUri = '/'+Math.random().toString(36).substring(2,7);
 let loginRandom = '/'+Math.random().toString(36).substring(1,7);
 
@@ -36,7 +40,7 @@ app.use("/images", express.static("images"));
 
 
 
-mongoose.connect("mongodb://localhost:27017/ValueWealthDB");
+mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.hxv9z.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);
 
 
 //const bootstrap = require('bootstrap');
